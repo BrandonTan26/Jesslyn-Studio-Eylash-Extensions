@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jesslyn Studio • Eyelash Extensions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --pink-soft: #ffeaf3;
+      --pink-light: #ff99c8;
+      --pink-glow: #ff69b4;
+      --pink-neon: #ff1493;
+      --rose-gold: #f7c6d2;
+      --white: #ffffff;
+      --text: #3d2b3d;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--pink-soft), #fdf6ff);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Neon Glow Effect */
+    .glow { text-shadow: 0 0 20px var(--pink-neon), 0 0 40px var(--pink-glow); }
+    .btn-glow {
+      background: var(--pink-glow);
+      box-shadow: 0 0 20px rgba(255,105,180,0.6);
+      transition: all 0.4s ease;
+    }
+    .btn-glow:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255,20,147,0.5);
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(to bottom, #fff3f9, transparent);
+      position: relative;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: var(--pink-neon);
+      class="glow"
+      margin-bottom: 12px;
+    }
+    .tagline {
+      font-size: 18px;
+      color: #8b5a7f;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .lash-icon {
+      font-size: 60px;
+      color: var(--pink-light);
+      opacity: 0.3;
+      position: absolute;
+      top: 50px;
+    }
+    .lash-left { left: 10%; transform: rotate(-20deg); }
+    .lash-right { right: 10%; transform: rotate(20deg); }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 5px 20px rgba(255,105,180,0.1);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+    nav a:hover { color: var(--pink-glow); }
+
+    /* Services Grid */
+    .services {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(255,105,180,0.12);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255,105,180,0.1);
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(255,20,147,0.18);
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--pink-neon);
+      margin: 15px 0 8px;
+    }
+    .price {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--pink-glow);
+      margin: 10px 0;
+    }
+    .lash-icon-card {
+      font-size: 50px;
+      color: var(--pink-light);
+      margin-bottom: 10px;
+    }
+
+    /* Button */
+    .btn-order {
+      display: block;
+      margin: 20px auto 0;
+      padding: 14px 30px;
+      width: 90%;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--pink-neon);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+      margin-top: 100px;
+    }
+    .footer-links a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .footer-links i { margin-right: 8px; }
+    .copyright {
+      margin-top: 30px;
+      opacity: 0.9;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .logo { font-size: 38px; }
+      .services { grid-template-columns: 1fr; padding: 60px 15px; }
+      nav ul { gap: 15px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <div class="lash-icon lash-left">❧</div>
+    <div class="lash-icon lash-right">❧</div>
+    <h1 class="logo glow">Jesslyn Studio</h1>
+    <p class="tagline">Eyelash Extensions • Your Beauty, Elevated</p>
+  </header>
+
+  <section class="services" id="services">
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Classic Lashes</h3>
+      <p>Full Set</p>
+      <div class="price">65K</div>
+      <button class="btn-order btn-glow" onclick="order('Classic Lashes – Full Set (65K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Natural Lashes</h3>
+      <p>Full Set</p>
+      <div class="price">75K</div>
+      <button class="btn-order btn-glow" onclick="order('Natural Lashes – Full Set (75K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Medium Lashes</h3>
+      <p>Full Set</p>
+      <div class="price">85K</div>
+      <button class="btn-order btn-glow" onclick="order('Medium Lashes – Full Set (85K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>YY Lashes</h3>
+      <p>Full Set</p>
+      <div class="price">80K</div>
+      <button class="btn-order btn-glow" onclick="order('YY Lashes – Full Set (80K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Double Lashes</h3>
+      <p>Full Set</p>
+      <div class="price">100K</div>
+      <button class="btn-order btn-glow" onclick="order('Double Lashes – Full Set (100K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Double Volume Lashes</h3>
+      <p>Full Set</p>
+      <div class="price">130K</div>
+      <button class="btn-order btn-glow" onclick="order('Double Volume Lashes – Full Set (130K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Remove Dikit</h3>
+      <p>—</p>
+      <div class="price">35K</div>
+      <button class="btn-order btn-glow" onclick="order('Remove Dikit (35K)')">ORDER VIA WHATSAPP</button>
+    </div>
+
+    <div class="card">
+      <div class="lash-icon-card">❧</div>
+      <h3>Remove Banyak</h3>
+      <p>—</p>
+      <div class="price">50K</div>
+      <button class="btn-order btn-glow" onclick="order('Remove Banyak (50K)')">ORDER VIA WHATSAPP</button>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-links">
+      <a href="https://wa.me/6287771981113"><i class="fab fa-whatsapp"></i> 087771981113</a>
+      <a href="mailto:fitrihar2626@gmail.com"><i class="fas fa-envelope"></i> fitrihar2626@gmail.com</a>
+      <a href="#"><i class="fas fa-map-marker-alt"></i> Banten, Indonesia</a>
+    </div>
+    <div class="copyright">
+      © 2025 Jesslyn Studio Eyelash Extensions • Made with ♡
+    </div>
+  </footer>
+
+  <script>
+    function order(service) {
+      const message = `Halo Kak, aku mau booking ${service} di Jesslyn Studio Eyelash Extensions. %F0%9F%98%8D`;
+      window.open(`https://wa.me/6287771981113?text=` + message, '_blank');
+    }
+  </script>
+</body>
+</html>
